@@ -1,14 +1,17 @@
-const buttons = document.querySelectorAll(".nav-btn");
-const sections = document.querySelectorAll(".section");
+const links = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('.section');
 
-buttons.forEach(button => {
-  button.addEventListener("click", () => {
-    // deactivate all
-    buttons.forEach(b => b.classList.remove("active"));
-    sections.forEach(s => s.classList.remove("active"));
+links.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
 
-    // activate clicked
-    button.classList.add("active");
-    document.getElementById(button.dataset.section).classList.add("active");
+    // Update active link
+    links.forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+
+    // Show matching section
+    const targetId = link.getAttribute('data-target');
+    sections.forEach(sec => sec.classList.remove('active'));
+    document.getElementById(targetId).classList.add('active');
   });
 });
