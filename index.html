@@ -3,79 +3,166 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Milanto Ferdinand Rasolofohery - Academic Portfolio</title>
+  <title>Ecology & AI</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
 <body>
-
-  <!-- NAVIGATION BAR -->
-  <nav class="navbar">
-    <button class="nav-btn active" data-section="about">Home</button>
-    <button class="nav-btn" data-section="experience">Experience</button>
-    <button class="nav-btn" data-section="projects">Projects</button>
-    <button class="nav-btn" data-section="research">Research</button>
-    <button class="nav-btn" data-section="contact">Contact</button>
-  </nav>
-
-  <!-- SECTIONS -->
-  <section id="about" class="section active">
-    <div class="content">
-      <h1>Milanto Ferdinand Rasolofohery</h1>
-      <p>
-        I have a background in applied mathematics and physics, 
-        passionate about deep learning, signal processing, and data analysis.
-        My work bridges scientific computing and applied AI for real-world data challenges.
-      </p>
-    </div>
-  </section>
-
-  <section id="experience" class="section">
-    <div class="content">
-      <h1>Experience</h1>
-      <h3>Teaching Assistant — <a href="https://aims.ac.za/">AIMS</a></h3>
-      <p>Assisted in mathematics, physics, machine learning, and data science courses.</p>
-
-      <h3>Research in Deep Learning for Ecology — <a href="https://ml-ecology.aims.ac.za/">Machine Learning for Ecology Group</a></h3>
-      <p>Worked on bioacoustics and wildlife monitoring using deep learning techniques.</p>
-    </div>
-  </section>
-
-  <section id="projects" class="section">
-    <div class="content">
-      <h1>Projects</h1>
+  <div class="overlay"></div>
+  
+  <header>
+    <div class="logo">Milanto Ferdinand Rasolofohery</div>
+    <nav>
       <ul>
-        <li><b>Bird Detection System:</b> Real-time detection on Raspberry Pi assisted with Telegram Chat Bot notification.</li>
-        <li><b>Parkinson’s Detection:</b> Machine learning on biomedical voice data for early diagnosis.</li>
-        <li><b>EcoSound Classifier:</b> Automated soundscape classification for wildlife monitoring.</li>
+        <li><a href="#" class="nav-link active" data-target="home">Overview</a></li>
+        <li><a href="#" class="nav-link" data-target="services">Research</a></li>
+        <li><a href="#" class="nav-link" data-target="about">Bio</a></li>
+        <li><a href="#" class="nav-link" data-target="contact">Contact</a></li>
       </ul>
-    </div>
-  </section>
+    </nav>
+  </header>
 
-  <section id="research" class="section">
-    <div class="content">
-      <h1>Research Interests</h1>
-      <ul>
-        <li>Deep Learning for Ecology and Health</li>
-        <li>Compressed Sensing and Audio Reconstruction</li>
-        <li>Bioacoustics Signal Analysis</li>
-        <li>Statistical Modeling of Environmental Data</li>
-      </ul>
-    </div>
-  </section>
+  <main>
+    <!-- HOME -->
+    <section id="home" class="section active">
+      <div class="content">
+       
+        <p>Our planet faces accelerating biodiversity loss—an estimated 73% decline in wildlife populations since 1970—driven by habitat conversion, overexploitation, pollution, invasive species, and climate change. Early, quantitative detection of population declines and ecosystem stressors is essential to prevent extinctions. Integrating scalable sensor networks (e.g., camera traps, passive acoustic recorders, and satellites) with standardized data pipelines and machine-learning analytics enables continuous monitoring, robust trend detection, and rapid identification of at‑risk species. Science-led, open, and reproducible monitoring systems therefore allow conservationists and policymakers to prioritize interventions, evaluate outcomes, and increase the likelihood of sustaining healthy ecosystems.</p>
+    </p>
+        <div class="images">
+          <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTRJDf2FXGwo-A3GH82q2C7iS4X2pYJ2eyZeQ8QXHCIeFOPNtI28ytgPZxXFAVzxG3uKOSEsI1cF26K0LVc8IUvgItKNh4TVcDNP0RktIk" alt="Lemure" />
+          <img src="https://i.guim.co.uk/img/media/e6f612b99be5628ce06e95027579680785e645d8/255_0_3490_2791/master/3490.jpg?width=465&dpr=1&s=none&crop=none" alt="Nature tree" />
+          <img src="https://www.cybiant.com/wp-content/uploads/2020/09/knowledge-article-What-is-Deep-Learning-.jpg" alt="Wildlife" />
+        </div>
+        <p>
+          The principal aim of this page is to motivate researchers to explore state-of-the-art technologies
+          and scientific research in the domain of applied biodiversity conservation. The integration of
+          artificial intelligence and deep learning with environmental science signifies a novel approach
+          to environmental conservation, with the potential to facilitate the protection of ecosystems
+          and the understanding of biodiversity.
+        </p>
+        <p>
+          This call is primarily addressed to all those involved in environmental conservation. In the face
+          of increasingly degrading environmental change, there is an urgent need for all stakeholders,
+          particularly scientific researchers, to collaborate to find sustainable solutions to protect
+          species that are not yet extinct but are in danger.
+        </p>
+      </div>
+    </section>
 
-  <section id="contact" class="section">
-    <div class="content">
-      <h1>Contact</h1>
-      <p>Email: <a href="mailto:you@example.com">milanto@aims.ac.za</a></p>
-      <p>GitHub: <a href="https://github.com/milanto-hery">github.com/milanto-hery</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/milanto-ferdinand-rasolofohery-673258223/">linkedin.com/in/milanto</a></p>
-      <p>Location: Cape Town, South Africa</p>
-    </div>
-  </section>
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <p class="intro">
+    The intersection of artificial intelligence, data science, and ecology advance sustainable development and biodiversity conservation by integrating environmental data from multiple sources 
+    including <a href="https://www.wwf.org.uk/sites/default/files/2019-04/Acousticmonitoring-WWF-guidelines.pdf" target="_blank">passive acoustic sensors</a>, 
+    <a href="https://www.wwf.org.uk/project/conservationtechnology/camera-trap" target="_blank">camera traps</a>, satellite imagery, and IoT systems.
+  </p>
+
+      <div class="service-item">
+        <div class="service-image">
+          <img src="images/datalogger.jpg" alt="Environmental Data Monitoring">
+        </div>
+        <div class="service-text">
+          <h2>🌍 Environmental data monitoring</h2>
+          <p>
+            Environmental data monitoring involves the design and deployment of digital tools 
+        for collecting, processing, and visualizing ecological information. 
+        Field data are captured using passive sensors, camera devices, drones, and remote sensing platforms, 
+        while advanced analytical pipelines enable efficient data fusion and interpretation. 
+        The goal is to establish integrative frameworks that enhance accessibility and interoperability 
+        of environmental data for scientific and community-based applications.
+          </p>
+        
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-image">
+          <img src="images/bioacoustic.jpeg" alt="Bioacoustic Analysis & Wildlife Detection">
+        </div>
+        <div class="service-text">
+          <h2>🎙️ Bioacoustic analysis & wildlife detection</h2>
+          <p>
+            Bioacoustic analysis applies deep learning and signal processing methods to detect and classify 
+        wildlife vocalizations from continuous sound recordings. 
+        Spectrogram-based machine learning and compressed sensing techniques are employed 
+        to automate species identification, monitor biodiversity trends, 
+        and assess the ecological impacts of environmental change. 
+        This approach contributes to large-scale passive acoustic monitoring and 
+        the development of open-access bioacoustic datasets.
+          </p>
+         <!-- <button class="read-more-btn">Read More</button> -->
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-image">
+          <img src="images/cloud.png" alt="Cloud Computing & AI Integration">
+        </div>
+        <div class="service-text">
+          <h2>☁️ Computer vision for animal tracking</h2>
+          <p>
+            Computer vision systems offer aimal tracking, allowing real-time analysis 
+          and collaboration across distributed networks of environmental devices. Integrating edge computing like Rasbery Pi and AI pipelines enables efficient data collection and analysis 
+          for ecological and conservation applications. These solutions promote open, reproducible, 
+          and sustainable science for environmental data management.
+          </p>
+       
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="content">
+        <h2>About <span>me</span></h2>
+        <p>
+          I am a researcher passionate about combining artificial intelligence with ecology and sustainability.
+          My passion for machine learning started when I was studying at the University of Antananarivo in Madagascar. 
+          I have been slected to attend the structured Master program at the <a href="https://www.aims.ac.za/" target="_blank">African Institute for Mathematical Sciences (AIMS)</a> in South Africa,
+          where I deepened my knowledge in machine learning, data science, and their applications. After that, I joined the <a href="https://ml-ecology.aims.ac.za/meet-the-team" target="_blank">Machine Learning for Ecology Group</a>, working on projects that leverage AI to address environmental challenges.
+          My research interests include biodiversity monitoring, wildlife conservation, and environmental data analysis using deep learning techniques
+        </p>
+
+        <h2>My vision</h2>
+        <p>
+          My vision is to use data-driven innovation to protect biodiversity and empower local communities.
+          By combining cutting-edge AI technologies with ecological knowledge, I aim to develop solutions that help monitor and conserve endangered species, restore ecosystems, and promote sustainable practices. 
+          I believe that through collaboration and innovation, we can create a future where technology and nature coexist harmoniously for the benefit of all living beings.
+        </p>
+
+        <h2>VinaMaintso</h2>
+        <p>
+          VinaMaintso is a personal initiative I created to promote the integration of modern technology into ecological research and environmental management. 
+          The word VinaMaintso is a combination of two words, originating from the Malagasy language, meaning the restoration of nature to a green world. Its primary aim is to monitor ecosystems, raise awareness about the importance of nature, and connect stakeholders and local communities in collective efforts to protect biodiversity and natural habitats. 
+          Through this platform, I seek to foster environmental conservation, encourage sustainable tourism, and contribute to the broader goal of supporting national economic development through ecological stewardship.   
+        </p>
+
+        </div>
+
+    </section>
+
+        <!-- CONTACT -->
+    <section id="contact" class="section">
+        <div class="contact-icons">
+           <p>
+            I am looking collaborations with indivuadual researchers, institutions, organizations, and gouvernments who share this vision. If you are interested in discussing potential partnerships, research opportunities, or simply want to connect, please feel free to reach out to me through the following channels:  
+          </p>
+
+
+          <a href="https://www.linkedin.com/in/milanto-ferdinand-rasolofohery-673258223/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+
+          <a href="mailto:milanto@aims.ac.za" title="Email"><i class="fas fa-envelope"></i></a>
+
+          <a href="https://www.facebook.com/ferdinand.milanto/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+
+          <a href="https://github.com/milanto-hery" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 milanto. All rights reserved.</p>
+    <p>© 2025 VinaMaintso | Built by <a href="#">Milanto</a></p>
   </footer>
 
   <script src="script.js"></script>
