@@ -1,13 +1,13 @@
 /* =========================
-   VARIABLES & GLOBALS
+   GLOBAL & COLORS
 ========================= */
 :root {
-    --primary: #2b7a78;
-    --secondary: #3aafa9;
-    --background-light: #f4fbfb;
-    --background-gradient: linear-gradient(135deg, #e0f7f1, #f0fcfd);
-    --text: #1b2d2e;
-    --muted: #5f7d7d;
+    --primary: #2c7da0;
+    --secondary: #57c7f3;
+    --text: #1a2a33;
+    --muted: #4a6b7c;
+    --background-light: #f7fcff;
+    --background-dark: #e6f4fb;
 }
 
 * {
@@ -16,13 +16,11 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
-    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
-    background: var(--background-gradient);
+    font-family: "Inter", Arial, sans-serif;
+    background: var(--background-light);
     color: var(--text);
     font-size: 18px;
     line-height: 1.8;
@@ -35,9 +33,9 @@ body {
     position: fixed;
     width: 100%;
     top: 0;
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255,255,255,0.9);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
     z-index: 1000;
 }
 
@@ -61,15 +59,13 @@ body {
     text-decoration: none;
     color: var(--text);
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
 
-.nav-links a:hover {
-    color: var(--secondary);
-}
+.nav-links a:hover { color: var(--secondary); }
 
 /* =========================
-   HERO SECTION
+   HERO
 ========================= */
 .hero {
     min-height: 100vh;
@@ -77,15 +73,15 @@ body {
     justify-content: center;
     align-items: center;
     padding-top: 6rem;
-    background:
-        radial-gradient(circle at top left, rgba(58, 175, 169, 0.15), transparent 60%),
-        radial-gradient(circle at bottom right, rgba(43, 122, 120, 0.15), transparent 60%);
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-content {
     max-width: 800px;
     text-align: center;
     padding: 2rem;
+    z-index: 2;
 }
 
 .hero-photo {
@@ -95,7 +91,8 @@ body {
     border-radius: 50%;
     margin-bottom: 1.5rem;
     border: 4px solid var(--secondary);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    animation: float 6s ease-in-out infinite;
 }
 
 .hero h1 {
@@ -114,18 +111,11 @@ body {
 /* =========================
    SECTIONS
 ========================= */
-.section {
-    padding: 6rem 2rem;
-}
+.section { padding: 6rem 2rem; }
+.section.light { background: var(--background-light); }
+.section.dark { background: var(--background-dark); }
 
-.section.dark {
-    background: #e8f5f4; /* soft light background */
-}
-
-.container {
-    max-width: 900px;
-    margin: auto;
-}
+.container { max-width: 900px; margin: auto; }
 
 .section h2 {
     font-size: 2.2rem;
@@ -133,17 +123,14 @@ body {
     color: var(--primary);
 }
 
-.section p {
-    margin-bottom: 1.6rem;
-    color: var(--text);
-}
+.section p { margin-bottom: 1.6rem; color: var(--text); }
 
 /* =========================
    PROJECTS
 ========================= */
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
     gap: 2.5rem;
 }
 
@@ -151,13 +138,13 @@ body {
     background: #ffffff;
     border-radius: 18px;
     padding: 1.5rem;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
 }
 
 .project img {
@@ -166,33 +153,14 @@ body {
     margin-bottom: 1rem;
 }
 
-.project p {
-    font-size: 0.95rem;
-}
-
-.project a {
-    display: inline-block;
-    margin-top: 1rem;
-    text-decoration: none;
-    font-weight: 600;
-    color: var(--primary);
-}
-
-.project a:hover {
-    color: var(--secondary);
-}
+.project a { color: var(--primary); font-weight: 600; text-decoration: none; }
+.project a:hover { color: var(--secondary); text-decoration: underline; }
 
 /* =========================
    CONTACT
 ========================= */
-#contact a {
-    color: var(--primary);
-    text-decoration: none;
-}
-
-#contact a:hover {
-    text-decoration: underline;
-}
+#contact a { color: var(--primary); text-decoration: none; }
+#contact a:hover { text-decoration: underline; }
 
 /* =========================
    FOOTER
@@ -213,19 +181,31 @@ body {
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Fancy floating animation for hero image */
-.hero-photo {
-    animation: float 6s ease-in-out infinite;
-}
+.reveal.active { opacity: 1; transform: translateY(0); }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
+    0%,100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
+}
+
+/* =========================
+   FLOATING BACKGROUND SHAPES
+========================= */
+.floating-shapes .shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+    animation: floatShape 20s infinite linear;
+}
+
+.shape1 { width: 200px; height: 200px; background: var(--primary); top: 10%; left: 5%; animation-delay: 0s;}
+.shape2 { width: 300px; height: 300px; background: var(--secondary); top: 30%; left: 70%; animation-delay: 5s;}
+.shape3 { width: 150px; height: 150px; background: #a0d8f1; top: 60%; left: 30%; animation-delay: 10s;}
+
+@keyframes floatShape {
+    0% { transform: translateY(0) rotate(0deg);}
+    50% { transform: translateY(-30px) rotate(180deg);}
+    100% { transform: translateY(0) rotate(360deg);}
 }
 
 /* =========================
