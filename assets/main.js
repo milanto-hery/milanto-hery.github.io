@@ -3,7 +3,7 @@ const reveals = document.querySelectorAll(".reveal");
 
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if(entry.isIntersecting){
             entry.target.classList.add("active");
         }
     });
@@ -11,7 +11,7 @@ const observer = new IntersectionObserver(entries => {
 
 reveals.forEach(el => observer.observe(el));
 
-// Optional: smooth fade for project cards on hover
+// Hover animation for project cards
 const projects = document.querySelectorAll(".project");
 projects.forEach(card => {
     card.addEventListener("mouseenter", () => {
