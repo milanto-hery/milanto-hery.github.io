@@ -1,23 +1,9 @@
-// =========================
-// REVEAL ON SCROLL
-// =========================
-document.addEventListener("DOMContentLoaded", function() {
-    const revealElements = document.querySelectorAll('.reveal');
+// Simple reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('active');
+    });
+},{ threshold: 0.1 });
 
-    function reveal() {
-        for (let i = 0; i < revealElements.length; i++) {
-            const windowHeight = window.innerHeight;
-            const elementTop = revealElements[i].getBoundingClientRect().top;
-            const elementVisible = 100;
-
-            if (elementTop < windowHeight - elementVisible) {
-                revealElements[i].classList.add('active');
-            } else {
-                revealElements[i].classList.remove('active');
-            }
-        }
-    }
-
-    window.addEventListener('scroll', reveal);
-    reveal();
-});
+reveals.forEach(el => observer.observe(el));
