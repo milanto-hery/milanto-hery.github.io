@@ -1,16 +1,11 @@
-// Reveal sections when scrolling
-function revealOnScroll() {
-    const reveals = document.querySelectorAll('.reveal');
-    const windowHeight = window.innerHeight;
-    const revealPoint = 150;
-
-    for (let i = 0; i < reveals.length; i++) {
+window.addEventListener("scroll", function(){
+    const reveals = document.querySelectorAll(".reveal");
+    for(let i=0;i<reveals.length;i++){
+        const windowHeight = window.innerHeight;
         const elementTop = reveals[i].getBoundingClientRect().top;
-        if(elementTop < windowHeight - revealPoint) {
-            reveals[i].classList.add('active');
-        } 
+        const elementVisible = 150;
+        if(elementTop < windowHeight - elementVisible){
+            reveals[i].classList.add("active");
+        }
     }
-}
-
-window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll);
+});
