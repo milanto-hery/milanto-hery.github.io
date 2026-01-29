@@ -9,44 +9,54 @@
   <script defer src="assets/main.js"></script>
 </head>
 
-<body>
+<body class="fade-in">
 
 <nav class="navbar">
   <div class="nav-container">
     <span class="logo">Milanto</span>
     <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
+      <a href="about.html" class="active">About</a>
       <a href="projects.html">Projects</a>
       <a href="contact.html">Contact</a>
     </div>
+    <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
   </div>
 </nav>
 
-<main class="page-content">
-  <section class="section light">
-    <div class="container reveal">
-      <h2>About Me</h2>
-
-      <p>
-        I am a researcher and machine learning practitioner with a strong
-        background in physics, applied mathematics, and artificial intelligence.
-        My work focuses on developing robust, interpretable, and efficient
-        learning systems for real-world environmental challenges.
-      </p>
-
-      <p>
-        My research interests include bioacoustics, compressed sensing,
-        deep learning for wildlife monitoring, edge AI, and computer vision.
-        I actively work at the interface between academic research and
-        deployable solutions.
-      </p>
-    </div>
-  </section>
+<main class="section light">
+  <div class="container reveal">
+    <h2>About Me</h2>
+    <p>
+      I am Milanto, a data scientist and machine learning researcher with a strong foundation in applied mathematics, physics, and computational modeling. I design intelligent systems that extract meaningful insights from complex data to inform real-world decisions.
+    </p>
+    <p>
+      My experience spans the full data pipeline: data acquisition, preprocessing, model development, evaluation, and deployment. I emphasize robust data representation and interpretable machine learning models.
+    </p>
+    <p>
+      My research is interdisciplinary, focusing on AI applications in environmental monitoring, wildlife conservation, and ecological analysis, including bioacoustics, computer vision, and remote sensing for large-scale automated analysis.
+    </p>
+  </div>
 </main>
 
 <footer class="footer">
-  © 2026 Milanto
+  <div class="footer-container">
+    <div class="footer-left">© 2026 Milanto</div>
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-icons">
+      <a href="https://github.com/milanto-hery" target="_blank">
+        <img src="assets/icons/github.png" alt="GitHub">
+      </a>
+      <a href="https://linkedin.com/in/milanto-hery" target="_blank">
+        <img src="assets/icons/linkedin.png" alt="LinkedIn">
+      </a>
+    </div>
+  </div>
 </footer>
 
 </body>
