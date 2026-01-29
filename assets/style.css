@@ -1,274 +1,79 @@
-/* =========================
-   GLOBAL & COLORS
-========================= */
 :root {
     --primary: #2c7da0;
     --secondary: #57c7f3;
     --text: #1a2a33;
     --muted: #4a6b7c;
-    --background-light: #e6f9e6; /* light green fun background */
-    --background-dark: #d4f1d4;
+    --background-light: #e0f7f1; /* light green-blue mix */
+    --background-dark: #c1f0e3;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+* { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior: smooth; }
-
 body {
     font-family: "Inter", Arial, sans-serif;
+    font-size:18px; line-height:1.8;
     background: var(--background-light);
     color: var(--text);
-    font-size: 18px;
-    line-height: 1.8;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
-/* =========================
-   NAVBAR
-========================= */
+/* NAVBAR */
 .navbar {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0,0,0,0.08);
-    z-index: 1000;
-    padding: 0.8rem 2rem;
+    position: fixed; width: 100%; top: 0;
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(0,0,0,0.1); z-index:1000;
 }
+.nav-container { max-width:1100px; margin:auto; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center;}
+.logo { font-weight:700; font-size:1.4rem; color:var(--primary); cursor:pointer;}
+.nav-links a { margin-left:2rem; text-decoration:none; color:var(--text); font-weight:500; transition:0.3s;}
+.nav-links a:hover { color:var(--secondary); }
 
-.nav-container {
-    max-width: 1100px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+/* HERO */
+.hero { min-height:100vh; display:flex; justify-content:center; align-items:center; padding-top:6rem; position:relative; overflow:hidden;}
+.hero-content { max-width:800px; text-align:center; padding:2rem; z-index:2; }
+.hero-photo { width:160px; height:160px; object-fit:cover; border-radius:50%; margin-bottom:1.5rem; border:4px solid var(--secondary); box-shadow:0 15px 40px rgba(0,0,0,0.1); animation:float 6s ease-in-out infinite;}
+.hero h1 { font-size:3rem; font-weight:700; margin-bottom:1rem;}
+.hero-tagline { font-size:1.25rem; color:var(--muted); max-width:650px; margin:auto;}
 
-.logo {
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: var(--primary);
-}
+/* SECTIONS */
+.section { padding:6rem 2rem; min-height:80vh; display:flex; align-items:center;}
+.section.light { background: var(--background-light);}
+.section.dark { background: var(--background-dark);}
+.container { max-width:900px; margin:auto;}
+.section h2 { font-size:2.2rem; margin-bottom:2rem; color:var(--primary);}
+.section p { margin-bottom:1.6rem; color: var(--text);}
 
-.nav-links a {
-    margin-left: 2rem;
-    text-decoration: none;
-    color: var(--text);
-    font-weight: 500;
-    transition: color 0.3s;
-}
+/* PROJECTS */
+.projects { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:2.5rem;}
+.project { background:#ffffff; border-radius:18px; padding:1.5rem; box-shadow:0 15px 40px rgba(0,0,0,0.06); transition:transform 0.3s, box-shadow 0.3s;}
+.project:hover { transform:translateY(-6px); box-shadow:0 20px 50px rgba(0,0,0,0.08);}
+.project img { width:100%; border-radius:12px; margin-bottom:1rem;}
+.project a { color:var(--primary); font-weight:600; text-decoration:none;}
+.project a:hover { color:var(--secondary); text-decoration:underline;}
 
-.nav-links a:hover {
-    color: var(--secondary);
-}
+/* CONTACT */
+.contact-links a { display:flex; align-items:center; margin-bottom:1rem; text-decoration:none; color:var(--text);}
+.contact-links a img { width:24px; height:24px; margin-right:0.6rem;}
+.contact-links a:hover { color:var(--secondary); }
 
-/* =========================
-   HERO / HOME
-========================= */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 6rem;
-    position: relative;
-    overflow: hidden;
-    background: var(--background-light);
-}
+/* FOOTER */
+.footer { text-align:center; padding:2rem; font-size:0.9rem; color:var(--muted);}
 
-.hero-content {
-    max-width: 800px;
-    text-align: center;
-    padding: 2rem;
-    z-index: 2;
-}
+/* FLOATING SHAPES */
+.floating-shapes .shape { position:absolute; border-radius:50%; opacity:0.15; animation:floatShape 20s infinite linear; }
+.shape1 { width:200px;height:200px;background:var(--primary);top:10%;left:5%;animation-delay:0s;}
+.shape2 { width:300px;height:300px;background:var(--secondary);top:30%;left:70%;animation-delay:5s;}
+.shape3 { width:150px;height:150px;background:#a0d8f1;top:60%;left:30%;animation-delay:10s;}
+@keyframes floatShape {0%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-30px) rotate(180deg);}100%{transform:translateY(0) rotate(360deg);}}
 
-.hero-photo {
-    width: 160px;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 1.5rem;
-    border: 4px solid var(--secondary);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-    animation: float 6s ease-in-out infinite;
-}
+@keyframes float {0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
 
-.hero h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
+.reveal { opacity:0; transform:translateY(30px); transition:0.8s ease; }
+.reveal.active { opacity:1; transform:translateY(0); }
 
-.hero-tagline {
-    font-size: 1.25rem;
-    color: var(--muted);
-    max-width: 650px;
-    margin: auto;
-}
-
-/* =========================
-   SECTIONS
-========================= */
-.section {
-    padding: 6rem 2rem;
-    flex: 1 0 auto;
-}
-
-.section.light {
-    background: var(--background-light);
-}
-
-.section.dark {
-    background: var(--background-dark);
-}
-
-.container {
-    max-width: 900px;
-    margin: auto;
-}
-
-.section h2 {
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
-    color: var(--primary);
-}
-
-.section p {
-    margin-bottom: 1.6rem;
-    color: var(--text);
-}
-
-/* =========================
-   PROJECTS
-========================= */
-.projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2.5rem;
-}
-
-.project {
-    background: #ffffff;
-    border-radius: 18px;
-    padding: 1.5rem;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.project:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-}
-
-.project img {
-    width: 100%;
-    border-radius: 12px;
-    margin-bottom: 1rem;
-}
-
-.project a {
-    color: var(--primary);
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.project a:hover {
-    color: var(--secondary);
-    text-decoration: underline;
-}
-
-/* =========================
-   CONTACT
-========================= */
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.contact-info .icon {
-    width: 24px;
-    height: 24px;
-    vertical-align: middle;
-    margin-right: 0.5rem;
-}
-
-.contact-info a {
-    color: var(--text);
-    font-weight: 500;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.contact-info a:hover {
-    color: var(--secondary);
-}
-
-/* =========================
-   FOOTER
-========================= */
-.footer {
-    text-align: center;
-    padding: 2rem;
-    font-size: 0.9rem;
-    color: var(--muted);
-    background: rgba(255,255,255,0.95);
-    border-top: 1px solid rgba(0,0,0,0.08);
-}
-
-/* =========================
-   ANIMATIONS
-========================= */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-@keyframes float {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-/* =========================
-   FLOATING SHAPES
-========================= */
-.floating-shapes .shape {
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.15;
-    animation: floatShape 20s infinite linear;
-}
-
-.shape1 { width: 200px; height: 200px; background: var(--primary); top: 10%; left: 5%; animation-delay: 0s;}
-.shape2 { width: 300px; height: 300px; background: var(--secondary); top: 30%; left: 70%; animation-delay: 5s;}
-.shape3 { width: 150px; height: 150px; background: #a0d8f1; top: 60%; left: 30%; animation-delay: 10s;}
-
-@keyframes floatShape {
-    0% { transform: translateY(0) rotate(0deg);}
-    50% { transform: translateY(-30px) rotate(180deg);}
-    100% { transform: translateY(0) rotate(360deg);}
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 768px) {
-    body { font-size: 17px; }
-    .hero h1 { font-size: 2.4rem; }
-    .nav-links a { margin-left: 1.2rem; }
-    .projects { gap: 1.5rem; }
+/* RESPONSIVE */
+@media (max-width:768px) {
+    body { font-size:17px;}
+    .hero h1 { font-size:2.4rem;}
+    .nav-links a { margin-left:1.2rem;}
 }
