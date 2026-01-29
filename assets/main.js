@@ -1,25 +1,38 @@
-// Reveal sections on scroll
+/* =========================
+   REVEAL ON SCROLL
+========================= */
 const reveals = document.querySelectorAll(".reveal");
 
-const observer = new IntersectionObserver(entries => {
+const revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-        if(entry.isIntersecting){
+        if (entry.isIntersecting) {
             entry.target.classList.add("active");
         }
     });
 }, { threshold: 0.15 });
 
-reveals.forEach(el => observer.observe(el));
+reveals.forEach(el => revealObserver.observe(el));
 
-// Hover animation for project cards
-const projects = document.querySelectorAll(".project");
-projects.forEach(card => {
-    card.addEventListener("mouseenter", () => {
-        card.style.transform = "translateY(-6px)";
-        card.style.boxShadow = "0 20px 50px rgba(0,0,0,0.08)";
+/* =========================
+   ACTIVE NAV LINK ON SCROLL
+========================= */
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const id = entry.target.getAttribute("id");
+            navLinks.forEach(link => {
+                link.classList.toggle(
+                    "active",
+                    link.getAttribute("href") === `#${id}`
+                );
+            });
+        }
     });
-    card.addEventListener("mouseleave", () => {
-        card.style.transform = "translateY(0)";
-        card.style.boxShadow = "0 15px 40px rgba(0,0,0,0.06)";
-    });
+}, {
+    threshold: 0.5
 });
+
+sections.forEach(section => sectionObserver.observe(section));
