@@ -1,13 +1,23 @@
-// Optional: floating shapes animation already handled by CSS
-// Reveal sections (if any extra scroll animation desired)
-const reveals = document.querySelectorAll('.reveal');
-window.addEventListener('scroll', () => {
-  reveals.forEach(el => {
-    const windowHeight = window.innerHeight;
-    const elementTop = el.getBoundingClientRect().top;
-    const revealPoint = 150;
-    if(elementTop < windowHeight - revealPoint){
-      el.classList.add('active');
+// =========================
+// REVEAL ON SCROLL
+// =========================
+document.addEventListener("DOMContentLoaded", function() {
+    const revealElements = document.querySelectorAll('.reveal');
+
+    function reveal() {
+        for (let i = 0; i < revealElements.length; i++) {
+            const windowHeight = window.innerHeight;
+            const elementTop = revealElements[i].getBoundingClientRect().top;
+            const elementVisible = 100;
+
+            if (elementTop < windowHeight - elementVisible) {
+                revealElements[i].classList.add('active');
+            } else {
+                revealElements[i].classList.remove('active');
+            }
+        }
     }
-  });
+
+    window.addEventListener('scroll', reveal);
+    reveal();
 });
