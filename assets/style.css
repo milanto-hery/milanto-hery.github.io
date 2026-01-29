@@ -32,7 +32,7 @@ body {
 .hero h1 { font-size:4rem; font-weight:800; margin-bottom:1rem; }
 .hero-tagline { font-size:1.25rem; color:var(--muted); max-width:800px; margin:auto; }
 
-.footer-icons img {
+/* .footer-icons img {
   height: 1.8rem;   /* smaller than footer height (3.5rem) */
   width: auto;       /* maintain aspect ratio */
   margin-left: 1rem;
@@ -43,7 +43,7 @@ body {
 
 .footer-icons img:hover {
   transform: scale(1.1);
-}
+} */
 
 /* SECTIONS */
 .section { padding:6rem 2rem; min-height:80vh; display:flex; align-items:center; }
@@ -86,4 +86,18 @@ body {
 .home-contact-btn { text-align:center; margin:2.5rem 0; }
 .btn-contact { display:inline-block; padding:0.8rem 2rem; font-size:1.2rem; font-weight:500; color:#fff; background:linear-gradient(135deg,#57c7f3,#2c7da0); border-radius:50px; text-decoration:none; box-shadow:0 8px 25px rgba(0,0,0,0.15); transition:all 0.3s ease; }
 .btn-contact:hover { transform:translateY(-3px); box-shadow:0 12px 30px rgba(0,0,0,0.2); background:linear-gradient(135deg,#2c7da0,#57c7f3); }
+
+
+/* ---------- FOOTER ICONS ---------- */
+.footer-icons img {
+  height: 1.8rem;        /* slightly smaller than footer height */
+  width: auto;            /* keep aspect ratio */
+  margin-left: 1rem;
+  vertical-align: middle; /* align with text if needed */
+  transition: transform 0.3s;
+}
+
+.footer-icons img:hover {
+  transform: scale(1.1);  /* optional hover effect */
+}
 
