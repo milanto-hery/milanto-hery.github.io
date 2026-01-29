@@ -1,62 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Milanto</title>
-    <link rel="stylesheet" href="assets/style.css">
-    <script defer src="assets/main.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects | Milanto</title>
+
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<script defer src="assets/main.js"></script>
 </head>
+
 <body>
 
 <nav class="navbar">
-    <div class="nav-container">
-        <span class="logo">Milanto</span>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
-        </div>
+  <div class="nav-container">
+    <span class="logo">Milanto</span>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="contact.html">Contact</a>
     </div>
+  </div>
 </nav>
 
-<main class="section light">
-    <div class="container reveal">
-        <h2>Projects & Work</h2>
+<main class="page-content section light">
+  <div class="container reveal">
+    <h2>Projects & Research</h2>
 
-        <div class="projects">
+    <div class="projects">
 
-            <div class="project">
-                <img src="assets/audiomoth.jpg" alt="Bioacoustics project">
-                <p>
-                    Automated bird detection using passive acoustic monitoring. Integrates audio preprocessing, spectrogram analysis, compressed sensing, and CNNs to classify species from large environmental recordings.
-                </p>
-                <a href="https://github.com/milanto-hery/bioacoustics-project" target="_blank">View project →</a>
-            </div>
+      <div class="project">
+        <img src="assets/audiomoth.jpg">
+        <p>Automated bird detection using passive acoustic monitoring and CNNs.</p>
+        <a href="https://github.com/milanto-hery/bioacoustics-project" target="_blank">
+          View project →
+        </a>
+      </div>
 
-            <div class="project">
-                <img src="assets/computer-vision.png" alt="Computer vision project">
-                <p>
-                    Object detection pipeline for ecological monitoring using YOLO. Includes dataset curation, annotation, model training, evaluation, and real-time inference.
-                </p>
-                <a href="https://github.com/milanto-hery/insect-detection-yolo" target="_blank">View project →</a>
-            </div>
+      <div class="project">
+        <img src="assets/computer-vision.png">
+        <p>YOLO-based object detection pipeline for ecological monitoring.</p>
+        <a href="https://github.com/milanto-hery/insect-detection-yolo" target="_blank">
+          View project →
+        </a>
+      </div>
 
-            <div class="project">
-                <img src="assets/edgepi.JPG" alt="Edge AI project">
-                <p>
-                    Low-cost bird detection system on Raspberry Pi. On-device inference and real-time alerts via Telegram for remote wildlife monitoring.
-                </p>
-                <a href="https://github.com/milanto-hery/remote-sensing-project" target="_blank">View project →</a>
-            </div>
+      <div class="project">
+        <img src="assets/edgepi.JPG">
+        <p>Edge AI bird detection on Raspberry Pi with real-time alerts.</p>
+        <a href="https://github.com/milanto-hery/remote-sensing-project" target="_blank">
+          View project →
+        </a>
+      </div>
 
-        </div>
     </div>
+  </div>
 </main>
 
 <footer class="footer">
-    © 2026 Milanto
+  © 2026 Milanto
 </footer>
 
 </body>
