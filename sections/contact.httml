@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Milanto</title>
+    <link rel="stylesheet" href="../assets/style.css">
+    <script defer src="../assets/main.js"></script>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <span class="logo"><a href="../index.html">Milanto</a></span>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="work.html">Work</a>
+            <a href="projects.html">Projects</a>
+        </div>
+    </div>
+</nav>
+
+<section class="section light">
+    <div class="container reveal">
+        <h2>Contact</h2>
+        <p>
+            I am open to research collaborations, PhD opportunities, and applied
+            data science or machine learning roles. If you are interested in my work or would like
+            to discuss potential collaborations, feel free to get in touch.
+        </p>
+
+        <p>
+            Email: milanto@aims.ac.za<br>
+            GitHub: <a href="https://github.com/milanto-hery" target="_blank">github.com/milanto-hery</a><br>
+            LinkedIn: <a href="https://linkedin.com/in/milanto-hery" target="_blank">linkedin.com/in/milanto-hery</a>
+        </p>
+    </div>
+</section>
+
+<footer class="footer">
+    © 2026 Milanto
+</footer>
+
+</body>
+</html>
