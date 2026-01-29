@@ -10,156 +10,19 @@
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar">
     <div class="nav-container">
-        <span class="logo">Milanto</span>
+        <span class="logo" onclick="loadSection('home')">Milanto</span>
         <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#work">Work</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <a onclick="loadSection('about')">About</a>
+            <a onclick="loadSection('work')">Work</a>
+            <a onclick="loadSection('projects')">Projects</a>
+            <a onclick="loadSection('contact')">Contact</a>
         </div>
     </div>
 </nav>
 
-<!-- HERO -->
-<header class="hero">
-    <div class="floating-shapes">
-        <div class="shape shape1"></div>
-        <div class="shape shape2"></div>
-        <div class="shape shape3"></div>
-    </div>
-    <div class="hero-content reveal">
-        <img src="assets/profile.JPG" alt="Milanto" class="hero-photo">
-        <h1>Milanto Ferdinand Rasolofohery</h1>
-        <p class="hero-tagline">
-            Data Scientist and Machine Learning Researcher working at the intersection of
-            artificial intelligence, environmental science, and real-world data systems.
-        </p>
-    </div>
-</header>
-
-<!-- ABOUT -->
-<section id="about" class="section">
-    <div class="container reveal">
-        <h2>About Me</h2>
-
-        <p>
-            I am Milanto, a data scientist and machine learning researcher with a strong foundation
-            in applied mathematics, physics, and computational modeling. My work focuses on building
-            intelligent systems that can extract meaningful information from complex data and support
-            decision-making in real-world contexts.
-        </p>
-
-        <p>
-            Over the years, I have worked across the full data science and machine learning pipeline,
-            from raw data acquisition and preprocessing to model development, evaluation, and deployment.
-            I place particular emphasis on understanding the structure and limitations of data, designing
-            robust representations, and developing models that are both effective and interpretable.
-        </p>
-
-        <p>
-            My research interests are strongly interdisciplinary. I am particularly motivated by
-            applications of artificial intelligence to environmental monitoring, wildlife conservation,
-            and ecological analysis. This includes work in bioacoustics, computer vision, and remote
-            sensing, where large-scale data and automated analysis are essential.
-        </p>
-    </div>
-</section>
-
-<!-- WORK / PHILOSOPHY -->
-<section id="work" class="section light">
-    <div class="container reveal">
-        <h2>My Work</h2>
-
-        <p>
-            My work is driven by the belief that machine learning systems should be grounded in a deep
-            understanding of both the data and the domain in which they are applied. Rather than treating
-            models as black boxes, I focus on building pipelines that combine signal processing,
-            statistical reasoning, and modern deep learning techniques.
-        </p>
-
-        <p>
-            I have extensive experience working with high-dimensional data such as audio signals,
-            spectrograms, images, and video. This includes designing preprocessing workflows, selecting
-            appropriate representations, and evaluating model performance using meaningful metrics.
-            I am particularly interested in scalable systems that can operate reliably under real-world
-            constraints.
-        </p>
-
-        <p>
-            Beyond technical development, I value clear communication and reproducibility. I aim to
-            produce work that is well-documented, transparent, and accessible to both technical and
-            interdisciplinary collaborators.
-        </p>
-    </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="section">
-    <div class="container reveal">
-        <h2>Selected Projects</h2>
-
-        <div class="projects">
-
-            <div class="project">
-                <img src="assets/audiomoth.jpg" alt="Bioacoustics project">
-                <p>
-                    Automated bird detection using passive acoustic monitoring. Integrates
-                    audio preprocessing, spectrogram analysis, compressed sensing,
-                    and CNNs to classify species from large environmental recordings.
-                </p>
-                <a href="https://github.com/milanto-hery/bioacoustics-project" target="_blank">
-                    View project repository →
-                </a>
-            </div>
-
-            <div class="project">
-                <img src="assets/computer-vision.png" alt="Computer vision project">
-                <p>
-                    Object detection pipeline for ecological monitoring using YOLO-based architectures.
-                    Includes dataset curation, annotation, training, evaluation, and real-time inference.
-                </p>
-                <a href="https://github.com/milanto-hery/insect-detection-yolo" target="_blank">
-                    View project repository →
-                </a>
-            </div>
-
-            <div class="project">
-                <img src="assets/edgepi.JPG" alt="Edge AI in wildlife monitoring">
-                <p>
-                    A low-cost bird detection system using a deep learning model deployed on a Raspberry Pi.
-                    The system performs on-device inference and sends real-time detection alerts via Telegram, enabling
-                    remote monitoring and rapid field validation. 
-                </p>
-                <a href="https://github.com/milanto-hery/remote-sensing-project" target="_blank">
-                    View project repository →
-                </a>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="section light">
-    <div class="container reveal">
-        <h2>Contact</h2>
-
-        <p>
-            I am open to research collaborations, PhD opportunities, and applied
-            data science or machine learning roles. If you are interested in my work or would like
-            to discuss potential collaborations, feel free to get in touch.
-        </p>
-
-        <p>
-            Email: milanto@aims.ac.za<br>
-            GitHub: <a href="https://github.com/milanto-hery" target="_blank">github.com/milanto-hery</a><br>
-            LinkedIn: <a href="https://linkedin.com/in/milanto-hery" target="_blank">linkedin.com/in/milanto-hery</a>
-        </p>
-    </div>
-</section>
+<main id="app"></main>
 
 <footer class="footer">
     © 2026 Milanto
