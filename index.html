@@ -4,25 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Milanto | Data Scientist & Machine Learning Researcher</title>
-
     <link rel="stylesheet" href="assets/style.css">
     <script defer src="assets/main.js"></script>
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
     <div class="nav-container">
-        <span class="logo" onclick="loadSection('home')">Milanto</span>
+        <span class="logo">Milanto</span>
         <div class="nav-links">
-            <a onclick="loadSection('about')">About</a>
-            <a onclick="loadSection('work')">Work</a>
-            <a onclick="loadSection('projects')">Projects</a>
-            <a onclick="loadSection('contact')">Contact</a>
+            <a href="sections/about.html">About</a>
+            <a href="sections/work.html">Work</a>
+            <a href="sections/projects.html">Projects</a>
+            <a href="sections/contact.html">Contact</a>
         </div>
     </div>
 </nav>
 
-<main id="app"></main>
+<!-- HERO / HOME -->
+<header class="hero">
+    <div class="floating-shapes">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+    </div>
+
+    <div class="hero-content reveal">
+        <img src="assets/profile.JPG" class="hero-photo" alt="Milanto">
+        <h1>Milanto Ferdinand Rasolofohery</h1>
+        <p class="hero-tagline">
+            Data Scientist and Machine Learning Researcher working at the intersection of
+            artificial intelligence, environmental science, and real-world data systems.
+        </p>
+    </div>
+</header>
 
 <footer class="footer">
     © 2026 Milanto
