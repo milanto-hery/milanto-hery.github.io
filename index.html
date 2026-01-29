@@ -3,51 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Milanto | Research & AI</title>
+  <title>Milanto | Data Scientist & ML Researcher</title>
 
   <link rel="stylesheet" href="assets/style.css">
   <script defer src="assets/main.js"></script>
 </head>
 
-<body>
+<body class="fade-in">
 
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-container">
     <span class="logo">Milanto</span>
     <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="floating-shapes">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+  </div>
+  <div class="hero-content reveal">
+    <img src="assets/profile.JPG" alt="Milanto" class="hero-photo">
+    <h1>Milanto Ferdinand Rasolofohery</h1>
+    <p class="hero-tagline">
+      Data Scientist and Machine Learning Researcher bridging AI, environmental science, and real-world data systems.
+    </p>
+  </div>
+</header>
+
+<div class="home-contact-btn">
+  <a href="contact.html" class="btn-contact">Get in Touch</a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">© 2026 Milanto</div>
+    <div class="footer-nav">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="projects.html">Projects</a>
       <a href="contact.html">Contact</a>
     </div>
-  </div>
-</nav>
-
-<!-- PAGE CONTENT -->
-<main class="page-content">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content reveal">
-      <img src="assets/profile.jpg" alt="Milanto" class="hero-photo">
-      <h1>Machine Learning & Environmental AI</h1>
-      <p class="hero-tagline">
-        Research-driven development at the intersection of machine learning,
-        bioacoustics, computer vision, and ecological monitoring.
-      </p>
-
-      <div class="home-contact-btn">
-        <a href="contact.html" class="btn-contact">Get in touch</a>
-      </div>
+    <div class="footer-icons">
+      <a href="https://github.com/milanto-hery" target="_blank">
+        <img src="assets/icons/github.png" alt="GitHub">
+      </a>
+      <a href="https://linkedin.com/in/milanto-hery" target="_blank">
+        <img src="assets/icons/linkedin.png" alt="LinkedIn">
+      </a>
     </div>
-  </section>
-
-</main>
-
-<!-- FOOTER -->
-<footer class="footer">
-  © 2026 Milanto · Research · AI · Conservation
+  </div>
 </footer>
 
 </body>
