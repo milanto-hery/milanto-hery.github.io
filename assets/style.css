@@ -32,7 +32,7 @@ body {
 .hero h1 { font-size:4rem; font-weight:800; margin-bottom:1rem; }
 .hero-tagline { font-size:1.25rem; color:var(--muted); max-width:800px; margin:auto; }
 
-.footer-icons img {
+/* .footer-icons img {
   height: 1.8rem;   /* smaller than footer height (3.5rem) */
   width: auto;       /* maintain aspect ratio */
   margin-left: 1rem;
@@ -43,7 +43,7 @@ body {
 
 .footer-icons img:hover {
   transform: scale(1.1);
-}
+} */
 
 /* SECTIONS */
 .section { padding:6rem 2rem; min-height:80vh; display:flex; align-items:center; }
@@ -76,7 +76,7 @@ body {
 .floating-shapes .shape { position:absolute; border-radius:50%; opacity:0.10; animation:floatShape 20s infinite linear; }
 .shape1 { width:200px;height:200px;background:var(--primary);top:30%;left:5%;animation-delay:0s;}
 .shape2 { width:300px;height:300px;background:var(--secondary);top:30%;left:70%;animation-delay:5s;}
-.shape3 { width:150px;height:150px;background:#a0d8f1;top:60%;left:30%;animation-delay:10s;}
+.shape3 { width:150px;height:150px;background:#a0d8f1;top:50%;left:20%;animation-delay:10s;}
 @keyframes floatShape {0%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-30px) rotate(180deg);}100%{transform:translateY(0) rotate(360deg);}}
 @keyframes float {0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
 
