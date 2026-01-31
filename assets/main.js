@@ -15,18 +15,40 @@ themeToggle.addEventListener('click', () => {
   themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
 });
 
-// ---------- PAGE TRANSITION (simple fade) ----------
-window.addEventListener('pageshow', () => {
-  document.body.classList.add('fade-in');
-});
+// ---------- READ MORE (AUTO HEIGHT MATCH IMAGE) ----------
+document.querySelectorAll(".about-block").forEach(block => {
+  const img = block.querySelector(".about-image img");
+  const text = block.querySelector(".about-text");
+  const btn = block.querySelector(".read-more");
 
-document.querySelectorAll(".read-more").forEach(button => {
-  button.addEventListener("click", () => {
-    const text = button.previousElementSibling;
+  if (!img || !text || !btn) return;
 
-    text.classList.toggle("expanded");
-    button.textContent = text.classList.contains("expanded")
-      ? "Read less"
-      : "Read more";
+  // wait until image loads to get correct height
+  const applyClamp = () => {
+    const imgHeight = img.clientHeight;
+    text.style.maxHeight = imgHeight + "px";
+    text.classList.add("collapsed");
+  };
+
+  if (img.complete) {
+    applyClamp();
+  } else {
+    img.onload = applyClamp;
+  }
+
+  btn.addEventListener("click", () => {
+    const expanded = btn.getAttribute("aria-expanded") === "true";
+
+    if (expanded) {
+      applyClamp();
+      btn.textContent = "Read more";
+      btn.setAttribute("aria-expanded", "false");
+    } else {
+      text.style.maxHeight = text.scrollHeight + "px";
+      text.classList.remove("collapsed");
+      btn.textContent = "Read less";
+      btn.setAttribute("aria-expanded", "true");
+    }
   });
 });
+
