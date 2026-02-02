@@ -52,3 +52,14 @@ document.querySelectorAll(".about-block").forEach(block => {
   });
 });
 
+// ---------- PROJECT READ MORE ----------
+document.querySelectorAll(".project-read-more").forEach(button => {
+  button.addEventListener("click", () => {
+    const text = button.previousElementSibling;
+
+    text.classList.toggle("expanded");
+    button.textContent = text.classList.contains("expanded")
+      ? "Read less"
+      : "Read more";
+  });
+});
