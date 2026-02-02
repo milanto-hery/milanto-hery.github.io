@@ -207,5 +207,35 @@ body {
 }
 
 
+/* ---------- PROJECT READ MORE ---------- */
+.project {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-text {
+  max-height: 5.4em;       /* ~3 lines */
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.project-text.expanded {
+  max-height: 1000px;
+}
+
+.project-read-more {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0.4rem 0 0.8rem;
+  font-size: 0.85rem;
+  color: var(--primary);
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.project-read-more:hover {
+  text-decoration: underline;
+}
 
 
