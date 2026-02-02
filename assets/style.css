@@ -158,6 +158,53 @@ body {
 }
 
 
+/* ---------- CONTACT PAGE ---------- */
+.contact-intro {
+  max-width: 650px;
+  margin-bottom: 3rem;
+  color: var(--muted);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.contact-card {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  padding: 1.6rem;
+  background: #ffffff;
+  border-radius: 16px;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+}
+
+.contact-card img {
+  width: 36px;
+  height: 36px;
+}
+
+.contact-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+
+.contact-card p {
+  margin: 0.2rem 0 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
 
 
 
