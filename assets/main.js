@@ -52,14 +52,28 @@ document.querySelectorAll(".about-block").forEach(block => {
   });
 });
 
-// ---------- PROJECT READ MORE ----------
-document.querySelectorAll(".project-read-more").forEach(button => {
-  button.addEventListener("click", () => {
-    const text = button.previousElementSibling;
+document.querySelectorAll(".project").forEach(card => {
+  const img = card.querySelector("img");
+  const text = card.querySelector(".project-text");
+  const btn = card.querySelector(".project-read-more");
 
-    text.classList.toggle("expanded");
-    button.textContent = text.classList.contains("expanded")
-      ? "Read less"
-      : "Read more";
+  function syncHeight() {
+    text.style.maxHeight = img.clientHeight + "px";
+  }
+
+  if (img.complete) syncHeight();
+  else img.onload = syncHeight;
+
+  btn.addEventListener("click", () => {
+    const expanded = card.classList.toggle("expanded");
+
+    if (expanded) {
+      text.style.maxHeight = text.scrollHeight + "px";
+      btn.textContent = "Read less";
+    } else {
+      syncHeight();
+      btn.textContent = "Read more";
+    }
   });
 });
+
