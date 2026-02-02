@@ -207,35 +207,65 @@ body {
 }
 
 
-/* ---------- PROJECT READ MORE ---------- */
+/* PROJECT GRID: 2 per row, auto wrap */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 2rem;
+}
+
+/* Project card */
 .project {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.2rem;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.06);
   display: flex;
   flex-direction: column;
 }
 
+/* Image */
+.project img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Text container (auto hide) */
 .project-text {
-  max-height: 5.4em;       /* ~3 lines */
+  position: relative;
   overflow: hidden;
-  transition: max-height 0.35s ease;
+  transition: max-height 0.4s ease;
 }
 
-.project-text.expanded {
-  max-height: 1000px;
+/* Fade effect */
+.project-text::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2.5rem;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), #fff);
 }
 
+/* Expanded mode */
+.project.expanded .project-text::after {
+  display: none;
+}
+
+/* Read more button */
 .project-read-more {
   background: none;
   border: none;
-  padding: 0;
-  margin: 0.4rem 0 0.8rem;
-  font-size: 0.85rem;
   color: var(--primary);
   cursor: pointer;
-  align-self: flex-start;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  padding: 0;
 }
 
 .project-read-more:hover {
   text-decoration: underline;
 }
-
-
