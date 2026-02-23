@@ -1,148 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Projects | Milanto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Milanto Rasolofohery</title>
 
-  <link rel="stylesheet" href="assets/style.css">
-  <script defer src="assets/main.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script defer src="assets/js/main.js"></script>
 </head>
 
 <body class="fade-in">
 
-<nav class="navbar">
-  <div class="nav-container">
-    <span class="logo">Milanto</span>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html" class="active">Projects</a>
-      <a href="contact.html">Contact</a>
+  <nav class="navbar">
+    <div class="nav-container">
+      <span class="logo">Milanto</span>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
     </div>
-    <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
-  </div>
-</nav>
+  </nav>
 
-<main class="section light">
-  <div class="container reveal">
-    <h2>Projects & Work</h2>
+  <main class="section">
+    <div class="container">
+      <h2>Featured Projects</h2>
 
-    <div class="projects">
+      <section class="projects">
+        <!-- PROJECT 1: Bioacoustics -->
+        <article class="project">
+          <img src="assets/figures/audiomoth.jpg" alt="Passive Acoustic Monitoring System">
+          <div class="project-content">
+            <h3>Bioacoustic Classification Pipeline</h3>
+            <div class="text-fade-container">
+              <p class="project-text">
+                Developed an automated workflow for biodiversity monitoring using Passive Acoustic Monitoring (PAM).
+                The system integrates signal preprocessing and Convolutional Neural Networks (CNNs) to classify wildlife
+                species from large-scale ecological recordings.
+                This project focuses on scalability and accuracy in real-world environmental conditions, providing a
+                robust solution for long-term ecological data collection and analysis.
+              </p>
+            </div>
+            <button class="read-more-btn">Read More &rarr;</button>
+            <a href="https://github.com/milanto-hery/bioacoustic-detection-pipeline.git" target="_blank"
+              class="project-link">
+              Explore the Repository &rarr;
+            </a>
+          </div>
+        </article>
 
-  <!-- PROJECT 1 -->
-  <div class="project">
-    <img src="assets/audiomoth.jpg" alt="Bioacoustics project">
+        <!-- PROJECT 2: YOLO -->
+        <article class="project">
+          <img src="assets/figures/insect.png" alt="YOLO-based Insect Detection">
+          <div class="project-content">
+            <h3>Real-time Ecological Surveillance</h3>
+            <div class="text-fade-container">
+              <p class="project-text">
+                Implemented a robust frame-based object detection system using the YOLO architecture.
+                Optimized for continuous video streams, the pipeline enables real-time inference and visualization for
+                automated ecological monitoring.
+                The system is designed to handle high-throughput data and complex backgrounds, making it suitable for
+                monitoring insects and other small organisms in their natural habitats.
+              </p>
+            </div>
+            <button class="read-more-btn">Read More &rarr;</button>
+            <a href="https://github.com/milanto-hery/insect-detection.git" target="_blank" class="project-link">
+              Explore the Repository &rarr;
+            </a>
+          </div>
+        </article>
 
-    <div class="project-text">
-      <p>
-        Automated detection workflow using passive acoustic monitoring.
-        This project integrates audio preprocessing, spectrogram gereration, and convolutional
-        neural networks training to classify animal species from large-scale
-        environmental recordings, supporting long-term biodiversity
-        monitoring and scalable ecological research.
-      </p>
+        <!-- PROJECT 3: Edge AI -->
+        <article class="project">
+          <img src="assets/figures/edgepi.JPG" alt="Edge AI Deployment on Raspberry Pi">
+          <div class="project-content">
+            <h3>Edge AI for Wildlife Alerts</h3>
+            <div class="text-fade-container">
+              <p class="project-text">
+                Engineered a low-cost Edge AI system for avian detection deployed on Raspberry Pi hardware.
+                The solution performs on-device inference and transmits real-time alerts via Telegram, ideal for
+                low-connectivity environments.
+                By processing data locally, the system reduces power consumption and bandwidth requirements, enabling
+                long-term deployment in remote areas for critical wildlife surveillance.
+              </p>
+            </div>
+            <button class="read-more-btn">Read More &rarr;</button>
+            <a href="https://github.com/milanto-hery/bird-detector-pi.git" target="_blank" class="project-link">
+              Explore the Repository &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- PROJECT 4: Primate Streamlit -->
+        <article class="project">
+          <img src="assets/figures/computer-vision.png" alt="Interactive Primate Analysis Interface">
+          <div class="project-content">
+            <h3>Primate Analysis Interface</h3>
+            <div class="text-fade-container">
+              <p class="project-text">
+                Created an interactive Streamlit application for analyzing wildlife imagery, specifically focusing on
+                lemur detection.
+                The platform enables users to deploy trained deep learning models through an intuitive web interface for
+                rapid ecological insights.
+                The interface supports various image formats and provides real-time feedback on model predictions,
+                empowering researchers to efficiently process large datasets and focus on conservation priorities.
+              </p>
+            </div>
+            <button class="read-more-btn">Read More &rarr;</button>
+            <a href="https://milanto-mada-primate.streamlit.app/" target="_blank" class="project-link">
+              Launch the Application &rarr;
+            </a>
+          </div>
+        </article>
+      </section>
     </div>
+  </main>
 
-    <button class="project-read-more">Read more</button>
-
-    <a href="https://github.com/milanto-hery/bioacoustic-detection-pipeline.git" target="_blank">
-      View project →
-    </a>
-  </div>
-
-
-  <!-- PROJECT 2 -->
-  <div class="project">
-    <img src="assets/insect.png" alt="YOLO frame-based detection">
-
-    <div class="project-text">
-      <p>
-        Frame-based object detection using YOLO applied to continuous video
-        streams. This project extracts frames, performs real-time inference,
-        and visualizes bounding-box predictions for ecological monitoring and
-        automated surveillance applications.
-      </p>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">© 2026 Milanto Rasolofohery</div>
+      <div class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-icons">
+        <a href="https://github.com/milanto-hery" target="_blank">
+          <img src="assets/images/github.png" alt="GitHub Profile">
+        </a>
+        <a href="https://linkedin.com/in/milanto-hery" target="_blank">
+          <img src="assets/images/linkdn.png" alt="LinkedIn Profile">
+        </a>
+      </div>
     </div>
-
-    <button class="project-read-more">Read more</button>
-
-    <a href="https://github.com/milanto-hery/insect-detection.git" target="_blank">View project →</a>
-  </div>
-  
-
-
-  <!-- PROJECT 3 -->
-  <div class="project">
-    <img src="assets/edgepi.JPG" alt="Edge AI on Raspberry Pi">
-
-    <div class="project-text">
-      <p>
-        Low-cost edge AI system for bird detection deployed on a Raspberry Pi.
-        The system performs on-device inference and sends real-time alerts
-        via Telegram, enabling remote wildlife monitoring in low-connectivity
-        environments.
-      </p>
-    </div>
-
-    <button class="project-read-more">Read more</button>
-
-    <a href="https://github.com/milanto-hery/bird-detector-pi.git" target="_blank">
-      View project →
-    </a>
-  </div>
-
-
-  <!-- PROJECT 4 -->
-  <div class="project">
-    <img src="assets/computer-vision.png" alt="YOLO object detection">
-
-    <div class="project-text">
-      <p>
-        Interactive Streamlit application for wildlife image analysis, designed to detect and classify animal species with a focus on lemurs. 
-        The application allows users to upload images and applies trained deep learning models to perform automated inference, returning visual 
-        predictions and confidence scores through an intuitive web interface. 
-        This project emphasizes usability, model interpretability, and rapid deployment of machine learning tools for conservation and ecological research.
-      </p>
-    </div>
-
-    <button class="project-read-more">Read more</button>
-
-    <a href="https://milanto-mada-primate.streamlit.app/" target="_blank">
-      View project →
-    </a>
-  </div>
-
-      
-
-</div>
-
-
-
-    
-  </div>
-</main>
-
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-left">© 2026 Milanto</div>
-    <div class="footer-nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html" class="active">Projects</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <div class="footer-icons">
-      <a href="https://github.com/milanto-hery" target="_blank">
-        <img src="assets/github.png" alt="GitHub">
-      </a>
-      <a href="https://linkedin.com/in/milanto-hery" target="_blank">
-        <img src="assets/linkdn.png" alt="LinkedIn">
-      </a>
-    </div>
-  </div>
-</footer>
+  </footer>
 
 </body>
-</html>
 
+</html>
