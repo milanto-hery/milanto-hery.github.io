@@ -4,64 +4,219 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Milanto | Data Scientist & ML Researcher</title>
+  <title>Milanto | Data Science & IoT Professional</title>
 
-  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Google Fonts: Outfit for modern feel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            midnight: {
+              bg: '#0A0F1D',
+              surface: '#161B2E',
+              accent: '#38BDF8',
+              text: '#F1F5F9',
+              muted: '#94A3B8',
+              border: '#1E293B'
+            },
+            obsidian: {
+              bg: '#050705',
+              surface: '#0D120D',
+              accent: '#10B981',
+              text: '#ECFCCB',
+              muted: '#6B7280',
+              border: '#141E14'
+            }
+          },
+          fontFamily: {
+            outfit: ['Outfit', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    .theme-midnight ::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 10px; }
+    .theme-obsidian ::-webkit-scrollbar-thumb { background: #141E14; border-radius: 10px; }
+
+    /* Glassmorphism */
+    .glass {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    /* Transition */
+    * { transition: background-color 0.5s ease, color 0.3s ease, border-color 0.3s ease; }
+
+    /* Theme Styles */
+    body.theme-midnight { background-color: #0A0F1D; color: #F1F5F9; }
+    body.theme-obsidian { background-color: #050705; color: #ECFCCB; }
+
+    .fade-in { animation: fadeIn 1s ease-out forwards; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+
   <script defer src="assets/js/main.js"></script>
 </head>
 
-<body class="fade-in">
+<body class="theme-midnight font-outfit overflow-x-hidden">
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <span class="logo">Milanto</span>
-      <div class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
+  <!-- NAVIGATION -->
+  <nav class="fixed top-0 left-0 w-full z-50 glass border-b border-opacity-10 transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-2 group cursor-pointer" onclick="window.location.href='index.html'">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-sky-500 flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:scale-110 transition-transform" id="logo-icon">M</div>
+        <span class="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-200 to-slate-400">Milanto</span>
       </div>
-      <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="font-medium text-sm hover:text-sky-400 transition-colors uppercase tracking-widest border-b-2 border-sky-400 pb-1">Home</a>
+        <a href="about.html" class="font-medium text-sm text-slate-400 hover:text-white transition-colors uppercase tracking-widest pb-1">About</a>
+        <a href="projects.html" class="font-medium text-sm text-slate-400 hover:text-white transition-colors uppercase tracking-widest pb-1">Projects</a>
+        <a href="contact.html" class="font-medium text-sm text-slate-400 hover:text-white transition-colors uppercase tracking-widest pb-1">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <button id="theme-toggle" class="p-2.5 rounded-xl border border-white border-opacity-10 hover:bg-white hover:bg-opacity-5 transition-all text-xl" title="Switch Deep Theme">
+          🌌
+        </button>
+      </div>
     </div>
   </nav>
 
-  <main>
-    <!-- HERO -->
-    <header class="hero">
-      <div class="hero-content">
-        <img src="assets/images/profile.JPG" alt="Milanto Rasolofohery" class="hero-photo">
-        <h1>Milanto Rasolofohery</h1>
-        <p class="hero-tagline">
-          Empowering scientific discovery through advanced Machine Learning and Data Science.
-          I specialize in bridging the gap between complex algorithms and real-world ecological solutions.
-        </p>
-        <div class="home-contact-btn">
-          <a href="contact.html" class="btn-contact">Start a Collaboration</a>
+  <main class="pt-20">
+    <!-- HERO SECTION -->
+    <section class="min-h-[90vh] flex items-center justify-center relative px-6 py-20 overflow-hidden">
+      <!-- Animated Background Circles -->
+      <div class="absolute top-1/4 -left-20 w-96 h-96 bg-sky-500 opacity-10 blur-[120px] rounded-full"></div>
+      <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-indigo-500 opacity-10 blur-[120px] rounded-full"></div>
+
+      <div class="max-w-5xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+        <div class="fade-in">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-sky-500 border-opacity-20 bg-sky-500 bg-opacity-5 text-sky-400 text-xs font-semibold uppercase tracking-widest mb-6">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
+            </span>
+            Available for Strategic Partnerships
+          </div>
+          <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1]">
+            Bridging <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-indigo-500">Nature</span> & <br>
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-emerald-400">Technology</span>
+          </h1>
+          <p class="text-xl text-slate-400 mb-10 leading-relaxed max-w-xl">
+             I am a Data Science Solution Provider specializing in transforming ecological raw data into actionable conservation intelligence through advanced ML and IoT.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="projects.html" class="px-8 py-4 bg-white text-midnight-bg font-bold rounded-2xl hover:bg-sky-400 hover:text-white transition-all shadow-xl shadow-white/5 flex items-center gap-2 group">
+              Explore Portfolio
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+            <a href="contact.html" class="px-8 py-4 border border-white border-opacity-10 font-bold rounded-2xl hover:bg-white hover:bg-opacity-5 transition-all text-slate-300">
+              Get in Touch
+            </a>
+          </div>
+        </div>
+
+        <div class="relative flex justify-center lg:justify-end fade-in" style="animation-delay: 0.2s">
+          <div class="relative w-80 h-80 lg:w-[450px] lg:h-[450px]">
+            <div class="absolute inset-0 border-2 border-white border-opacity-5 rounded-full animate-[spin_20s_linear_infinite]"></div>
+            <div class="absolute inset-4 border border-white border-opacity-10 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+            
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-64 h-64 lg:w-80 lg:h-80 rounded-3xl overflow-hidden shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500 border-4 border-white border-opacity-10">
+                <img src="assets/images/profile.JPG" alt="Milanto Rasolofohery" class="w-full h-full object-cover">
+              </div>
+            </div>
+
+            <div class="absolute -top-4 -right-4 glass p-4 rounded-2xl border border-white border-opacity-10 shadow-xl animate-bounce">
+              <span class="text-2xl">🌍</span>
+            </div>
+            <div class="absolute bottom-10 -left-10 glass p-4 rounded-2xl border border-white border-opacity-10 shadow-xl animate-pulse">
+               <span class="text-sm font-bold text-sky-400">Bioacoustics Expert</span>
+            </div>
+          </div>
         </div>
       </div>
-    </header>
+    </section>
+
+    <!-- QUICK STATS / FOCUS -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass p-8 rounded-3xl border border-white border-opacity-5 hover:border-sky-500/30 transition-all hover:-translate-y-2 group">
+          <div class="w-14 h-14 rounded-2xl bg-sky-500/10 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">📊</div>
+          <h3 class="text-xl font-bold mb-4">Precision Modeling</h3>
+          <p class="text-slate-400 leading-relaxed">Developing robust ML models that extract high-value insights from complex, noisy biological data.</p>
+        </div>
+        <div class="glass p-8 rounded-3xl border border-white border-opacity-5 hover:border-emerald-500/30 transition-all hover:-translate-y-2 group">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">📡</div>
+          <h3 class="text-xl font-bold mb-4">Edge IoT Deployment</h3>
+          <p class="text-slate-400 leading-relaxed">Designing low-power, field-ready AI sensors for real-time biodiversity monitoring in remote areas.</p>
+        </div>
+        <div class="glass p-8 rounded-3xl border border-white border-opacity-5 hover:border-indigo-500/30 transition-all hover:-translate-y-2 group">
+          <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">🔬</div>
+          <h3 class="text-xl font-bold mb-4">Applied R&D</h3>
+          <p class="text-slate-400 leading-relaxed">Bridging academic research and field application to solve real-world environmental challenges.</p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-left">© 2026 Milanto</div>
-      <div class="footer-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
+  <footer class="border-t border-white border-opacity-5 py-20 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div class="col-span-1 md:col-span-2">
+        <div class="flex items-center gap-2 mb-6">
+          <div class="w-8 h-8 rounded-lg bg-sky-500 flex items-center justify-center text-white font-bold">M</div>
+          <span class="text-xl font-bold">Milanto.</span>
+        </div>
+        <p class="text-slate-400 max-w-sm mb-8">
+          Elevating conservation through technology. Specialized in Data Science, Machine Learning, and IoT for the environmental sector.
+        </p>
+        <div class="flex gap-4">
+          <a href="https://github.com/milanto-hery" target="_blank" class="w-12 h-12 rounded-xl border border-white border-opacity-10 flex items-center justify-center hover:bg-white hover:bg-opacity-5 transition-all grayscale hover:grayscale-0">
+            <img src="assets/images/github.png" alt="GitHub" class="w-6 h-6 invert">
+          </a>
+          <a href="https://linkedin.com/in/milanto-hery" target="_blank" class="w-12 h-12 rounded-xl border border-white border-opacity-10 flex items-center justify-center hover:bg-white hover:bg-opacity-5 transition-all">
+            <img src="assets/images/linkdn.png" alt="LinkedIn" class="w-6 h-6">
+          </a>
+        </div>
       </div>
-      <div class="footer-icons">
-        <a href="https://github.com/milanto-hery" target="_blank">
-          <img src="assets/images/github.png" alt="GitHub">
-        </a>
-        <a href="https://linkedin.com/in/milanto-hery" target="_blank">
-          <img src="assets/images/linkdn.png" alt="LinkedIn">
-        </a>
+      
+      <div>
+        <h4 class="font-bold mb-6 uppercase tracking-widest text-xs text-slate-500">Navigation</h4>
+        <ul class="space-y-4 text-slate-400">
+          <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
+          <li><a href="projects.html" class="hover:text-white transition-colors">Projects</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
       </div>
 
+      <div>
+        <h4 class="font-bold mb-6 uppercase tracking-widest text-xs text-slate-500">Contact</h4>
+        <p class="text-slate-400 mb-4">Cape Town, South Africa</p>
+        <a href="mailto:milanto@aims.ac.za" class="text-sky-400 hover:underline">milanto@aims.ac.za</a>
+      </div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white border-opacity-5 flex flex-col md:row justify-between items-center gap-4 text-sm text-slate-500">
+      <p>© 2026 Milanto Rasolofohery. Developed with Antigravity.</p>
     </div>
   </footer>
 

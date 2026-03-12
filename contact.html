@@ -6,83 +6,219 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Milanto Rasolofohery</title>
 
-  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            midnight: {
+              bg: '#0A0F1D',
+              surface: '#161B2E',
+              accent: '#38BDF8',
+              text: '#F1F5F9',
+              muted: '#94A3B8',
+              border: '#1E293B'
+            },
+            obsidian: {
+              bg: '#050705',
+              surface: '#0D120D',
+              accent: '#10B981',
+              text: '#ECFCCB',
+              muted: '#6B7280',
+              border: '#141E14'
+            }
+          },
+          fontFamily: {
+            outfit: ['Outfit', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .glass { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+    * { transition: background-color 0.5s ease, color 0.3s ease, border-color 0.3s ease; }
+    body.theme-midnight { background-color: #0A0F1D; color: #F1F5F9; }
+    body.theme-obsidian { background-color: #050705; color: #ECFCCB; }
+    .fade-in { animation: fadeIn 1s ease-out forwards; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    
+    .input-field {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1.5rem;
+      padding: 1.25rem 1.5rem;
+      color: white;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+    
+    .input-field:focus {
+      border-color: #38BDF8;
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.1);
+    }
+    
+    .theme-obsidian .input-field:focus { border-color: #10B981; box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1); }
+
+    .required-star { color: #f43f5e; margin-left: 2px; }
+  </style>
+
   <script defer src="assets/js/main.js"></script>
 </head>
 
-<body class="fade-in">
+<body class="theme-midnight font-outfit overflow-x-hidden">
 
-  <nav class="navbar">
-    <div class="nav-container">
-      <span class="logo">Milanto</span>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html" class="active">Contact</a>
+  <!-- NAVIGATION -->
+  <nav class="fixed top-0 left-0 w-full z-50 glass border-b border-opacity-10" id="navbar">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-2 group cursor-pointer" onclick="window.location.href='index.html'">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-sky-500 flex items-center justify-center text-white font-bold text-xl" id="logo-icon">M</div>
+        <span class="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-200 to-slate-400">Milanto</span>
       </div>
-      <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="font-medium text-sm text-slate-400 hover:text-white transition-colors uppercase tracking-widest pb-1">Home</a>
+        <a href="about.html" class="font-medium text-sm text-slate-400 hover:text-white transition-colors uppercase tracking-widest pb-1">About</a>
+        <a href="projects.html" class="font-medium text-sm text-slate-400 hover:text-white transition-colors uppercase tracking-widest pb-1">Projects</a>
+        <a href="contact.html" class="font-medium text-sm hover:text-sky-400 transition-colors uppercase tracking-widest border-b-2 border-sky-400 pb-1">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <button id="theme-toggle" class="p-2.5 rounded-xl border border-white border-opacity-10 hover:bg-white hover:bg-opacity-5 transition-all text-xl">
+          🌌
+        </button>
+      </div>
     </div>
   </nav>
 
-  <main>
-    <section class="section">
-      <div class="container">
-        <h2>Let's Build the Future</h2>
-        <p class="contact-intro">
-          I am always open to discussing new research opportunities, PhD collaborations, or innovative machine learning
-          projects.
-          Whether you are looking for an academic partnership or a specialized data consultant, feel free to reach out.
-        </p>
-
-        <section class="contact-grid">
-          <!-- Email -->
-          <a class="contact-card" href="mailto:milanto@aims.ac.za">
-            <img src="assets/images/gmail.png" alt="Email icon">
-            <div>
-              <h3>Direct Contact</h3>
-              <p>milanto@aims.ac.za</p>
+  <main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-stretch">
+       
+       <div class="fade-in flex flex-col justify-center">
+          <h1 class="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight">Let's <span class="text-sky-400">Collaborate.</span></h1>
+          <p class="text-xl text-slate-400 mb-12 leading-relaxed max-w-md">
+            I am available for data science consulting, research collaborations, and conservation technology projects.
+          </p>
+          
+          <div class="space-y-10">
+            <a href="mailto:milanto@aims.ac.za" class="flex items-center gap-6 group">
+               <div class="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-3xl group-hover:bg-sky-500/10 group-hover:border-sky-500/30 transition-all">📧</div>
+               <div>
+                  <h4 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Professional Email</h4>
+                  <p class="text-lg font-medium group-hover:text-sky-400 transition-colors">milanto@aims.ac.za</p>
+               </div>
+            </a>
+            
+            <div class="flex items-center gap-6 group">
+               <div class="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-3xl group-hover:bg-emerald-500/10 group-hover:border-emerald-500/30 transition-all">📍</div>
+               <div>
+                  <h4 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Current Base</h4>
+                  <p class="text-lg font-medium">Cape Town, South Africa</p>
+               </div>
             </div>
-          </a>
 
-          <!-- LinkedIn -->
-          <a class="contact-card" href="https://www.linkedin.com/in/milanto/" target="_blank">
-            <img src="assets/images/linkdn.png" alt="LinkedIn icon">
-            <div>
-              <h3>Professional Network</h3>
-              <p>linkedin.com/in/milanto</p>
-            </div>
-          </a>
+            <a href="https://linkedin.com/in/milanto-hery" target="_blank" class="flex items-center gap-6 group">
+               <div class="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-sky-500/10 group-hover:border-sky-500/30 transition-all">
+                  <img src="assets/images/linkdn.png" alt="LinkedIn" class="w-8 h-8">
+               </div>
+               <div>
+                  <h4 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Professional Network</h4>
+                  <p class="text-lg font-medium group-hover:text-sky-400 transition-colors">in/milanto-hery</p>
+               </div>
+            </a>
+          </div>
+       </div>
 
-          <!-- GitHub -->
-          <a class="contact-card" href="https://github.com/milanto-hery" target="_blank">
-            <img src="assets/images/github.png" alt="GitHub icon">
-            <div>
-              <h3>Project Updates</h3>
-              <p>github.com/milanto-hery</p>
-            </div>
-          </a>
-        </section>
-      </div>
-    </section>
+       <!-- CONTACT FORM WITH FORMSPREE TO AVOID POPUPS -->
+       <div class="glass p-10 md:p-14 rounded-[3.5rem] border border-white/5 fade-in relative overflow-hidden" style="animation-delay: 0.2s">
+          <div class="absolute -top-24 -right-24 w-64 h-64 bg-sky-500/5 rounded-full blur-3xl"></div>
+          
+          <h3 class="text-2xl font-bold mb-10">Send a Secure Message</h3>
+          
+          <form action="https://formspree.io/f/milanto@aims.ac.za" method="POST" class="space-y-8">
+             <div>
+                <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">
+                   Your Full Name <span class="required-star">*</span>
+                </label>
+                <input type="text" name="name" required placeholder="Milanto Rasolofohery" class="input-field">
+             </div>
+             
+             <div>
+                <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">
+                   Email Address <span class="required-star">*</span>
+                </label>
+                <input type="email" name="_replyto" required placeholder="your.email@example.com" class="input-field">
+             </div>
+
+             <div>
+                <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">
+                   Subject <span class="required-star">*</span>
+                </label>
+                <input type="text" name="subject" required placeholder="Project Collaboration" class="input-field">
+             </div>
+
+             <div>
+                <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">
+                   Your Message <span class="required-star">*</span>
+                </label>
+                <textarea name="message" required rows="5" placeholder="Let's discuss how we can bridge nature and technology..." class="input-field"></textarea>
+             </div>
+
+             <!-- Hidden configurations for Formspree -->
+             <input type="hidden" name="_subject" value="New Portfolio Inquiry">
+             
+             <button type="submit" class="w-full py-5 bg-sky-500 text-white font-bold rounded-2xl hover:bg-sky-400 transition-all shadow-xl shadow-sky-500/20 active:scale-[0.98]">
+               Send Message
+             </button>
+
+             <p class="text-[10px] text-slate-500 text-center mt-6 uppercase tracking-widest">
+                Protected by automated end-to-end delivery.
+             </p>
+          </form>
+       </div>
+
+    </div>
+
   </main>
 
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-left">© 2026 Milanto Rasolofohery</div>
-      <div class="footer-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html" class="active">Contact</a>
+  <footer class="border-t border-white border-opacity-5 py-20 px-6 mt-20">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 text-sm text-slate-500">
+      <div class="col-span-1 md:col-span-2">
+        <div class="flex items-center gap-2 mb-6">
+          <div class="w-8 h-8 rounded-lg bg-sky-500 flex items-center justify-center text-white font-bold">M</div>
+          <span class="text-xl font-bold text-white tracking-tight">Milanto.</span>
+        </div>
+        <p class="max-w-sm mb-8">
+          Elevating conservation through technology. Specialized in Data Science, Machine Learning, and IoT.
+        </p>
       </div>
-      <div class="footer-icons">
-        <a href="https://github.com/milanto-hery" target="_blank">
-          <img src="assets/images/github.png" alt="GitHub Profile">
-        </a>
-        <a href="https://linkedin.com/in/milanto-hery" target="_blank">
-          <img src="assets/images/linkdn.png" alt="LinkedIn Profile">
-        </a>
+      
+      <div>
+        <h4 class="font-bold mb-6 uppercase tracking-widest text-xs">Explore</h4>
+        <ul class="space-y-4">
+          <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
+          <li><a href="projects.html" class="hover:text-white transition-colors">Projects</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+       <div>
+        <h4 class="font-bold mb-6 uppercase tracking-widest text-xs">Based in</h4>
+        <p class="mb-4">Cape Town, South Africa</p>
+        <p class="text-sky-400">Collaborating Worldwide</p>
       </div>
     </div>
   </footer>

@@ -6,119 +6,198 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Milanto Rasolofohery</title>
 
-  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            midnight: {
+              bg: '#0A0F1D',
+              surface: '#161B2E',
+              accent: '#38BDF8',
+              text: '#F1F5F9',
+              muted: '#94A3B8',
+              border: '#1E293B'
+            },
+            obsidian: {
+              bg: '#050705',
+              surface: '#0D120D',
+              accent: '#10B981',
+              text: '#ECFCCB',
+              muted: '#6B7280',
+              border: '#141E14'
+            }
+          },
+          fontFamily: {
+            outfit: ['Outfit', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .glass { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+    * { transition: background-color 0.5s ease, color 0.3s ease, border-color 0.3s ease; }
+    body.theme-midnight { background-color: #0A0F1D; color: #F1F5F9; }
+    body.theme-obsidian { background-color: #050705; color: #ECFCCB; }
+    .fade-in { animation: fadeIn 1s ease-out forwards; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    
+    p { text-align: justify; }
+  </style>
+
   <script defer src="assets/js/main.js"></script>
 </head>
 
-<body class="fade-in">
+<body class="theme-midnight font-outfit overflow-x-hidden">
 
-  <nav class="navbar">
-    <div class="nav-container">
-      <span class="logo">Milanto</span>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
+  <!-- NAVIGATION -->
+  <nav class="fixed top-0 left-0 w-full z-50 glass border-b border-opacity-10" id="navbar">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-2 group cursor-pointer" onclick="window.location.href='index.html'">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-sky-500 flex items-center justify-center text-white font-bold text-xl" id="logo-icon">M</div>
+        <span class="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-200 to-slate-400">Milanto</span>
       </div>
-      <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="font-medium text-sm text-slate-400 hover:text-white transition-colors uppercase tracking-widest pb-1">Home</a>
+        <a href="about.html" class="font-medium text-sm hover:text-sky-400 transition-colors uppercase tracking-widest border-b-2 border-sky-400 pb-1">About</a>
+        <a href="projects.html" class="font-medium text-sm text-slate-400 hover:text-white transition-colors uppercase tracking-widest pb-1">Projects</a>
+        <a href="contact.html" class="font-medium text-sm text-slate-400 hover:text-white transition-colors uppercase tracking-widest pb-1">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <button id="theme-toggle" class="p-2.5 rounded-xl border border-white border-opacity-10 hover:bg-white hover:bg-opacity-5 transition-all text-xl">
+          🌌
+        </button>
+      </div>
     </div>
   </nav>
 
-  <main class="section about-section">
-    <div class="container">
-      <h2>The Journey Behind the Data</h2>
-      <p class="about-intro">
-        I am Milanto, a Data Scientist and Machine Learning Researcher driven by the intersection of applied
-        mathematics,
-        environmental conservation, and computational modeling. My mission is to develop precise, scalable models
-        that transform complex data into actionable ecological insights.
+  <main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+    <!-- HERO SECTION: FULL WIDTH -->
+    <header class="w-full mb-24 fade-in">
+      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8">
+        Solving <span class="text-sky-400">Nature</span> with <br>
+        <span class="text-indigo-500">Intelligent Data.</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-slate-400 leading-relaxed font-light w-full">
+        I am a Data Scientist and ML Researcher who bridges the gap between environmental raw data and actionable conservation intelligence. My mission is to develop precise, scalable models that transform complex data into actionable ecological insights.
       </p>
+    </header>
 
-      <!-- ===== BLOCK 1: Academic Background ===== -->
-      <article class="about-block">
-        <div class="about-image">
-          <img src="assets/images/graduation.jpeg" alt="Academic Graduation">
-        </div>
-
-        <div class="about-content">
-          <div class="about-text">
-            <h3>Academic Excellence</h3>
-            <div class="text-fade-container">
-              <p>
-                My fascination with natural systems and computational logic began during my BSc in Physics at the
-                University of Antananarivo.
-                This foundation in mathematical modeling led me to an MSc focused on time-series prediction, a pivotal
-                moment where
-                I realized the potential of Artificial Intelligence in solving real-world challenges.
-                I delved deep into the nuances of data patterns and physical phenomena, learning how to translate
-                natural observations into robust mathematical frameworks.
-              </p>
-              <p>
-                I later joined the African Institute for Mathematical Sciences (AIMS), where I immersed myself in
-                advanced machine learning.
-                This journey continued at Stellenbosch University, where I applied AI techniques to environmental
-                monitoring and wildlife protection,
-                solidifying my goal of developing impactful scientific solutions. My research here emphasized the
-                importance of interpretability and ethical considerations in AI-driven conservation strategies.
-              </p>
-            </div>
-            <button class="read-more-btn">Read More &rarr;</button>
+    <!-- THE STORY BLOCKS -->
+    <div class="space-y-32">
+      
+      <!-- BLOCK 1: MISSION -->
+      <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 fade-in">
+          <div class="inline-block px-4 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-bold uppercase tracking-widest mb-6 text-left">The Approach</div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-8 italic text-left">"I don't just build models; I engineer end-to-end solutions that translate nature's voice into data-driven decisions."</h2>
+          <div class="space-y-6 text-slate-400 text-lg leading-relaxed">
+            <p>
+              My fascination with natural systems and computational logic began during my BSc in Physics at the University of Antananarivo. This foundation in mathematical modeling led me to an MSc focused on time-series prediction, where I realized the immense potential of Artificial Intelligence in tackling biodiversity loss.
+            </p>
+            <p>
+              Later, at the African Institute for Mathematical Sciences (AIMS) and Stellenbosch University, I refined my expertise in Deep Learning and Signal Processing, focusing specifically on how these technologies can be deployed in the field—not just in the lab.
+            </p>
           </div>
         </div>
-      </article>
-
-      <!-- ===== BLOCK 2: Scientific Communication ===== -->
-      <article class="about-block">
-        <div class="about-image">
-          <img src="assets/images/profile.JPG" alt="Professional Presentation">
-        </div>
-
-        <div class="about-content">
-          <div class="about-text">
-            <h3>Global Engagement</h3>
-            <div class="text-fade-container">
-              <p>
-                Active engagement in the scientific community is central to my work. I have presented research on
-                foundational
-                data science methods at AIMS Rwanda and participated in the Eleventh International Conference on
-                Learning Representations (ICLR 2023).
-                These platforms allowed me to exchange ideas with leading experts and stay at the forefront of AI
-                innovation, ensuring that my methods are both rigorous and state-of-the-art.
-              </p>
-              <p>
-                Recently, I contributed to the Vatican African Conference on Climate Resilience in Nairobi, Kenya,
-                exploring
-                nature-based solutions for sustainable action. These experiences have refined my ability to communicate
-                complex scientific concepts to diverse audiences, ensuring that research has a tangible impact on
-                climate and conservation policy.
-                I believe that effective communication is the bridge between theoretical research and meaningful,
-                real-world change.
-              </p>
-            </div>
-            <button class="read-more-btn">Read More &rarr;</button>
+        <div class="lg:col-span-5 relative group fade-in" style="animation-delay: 0.2s">
+          <div class="absolute -inset-2 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-[2rem] opacity-20 blur-xl group-hover:opacity-40 transition-opacity"></div>
+          <div class="relative rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl h-[500px]">
+            <img src="assets/images/graduation.jpeg" alt="Academic Background" class="w-full h-full object-cover">
           </div>
         </div>
-      </article>
+      </section>
+
+      <!-- BLOCK 2: GLOBAL IMPACT -->
+      <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-5 lg:order-2 fade-in">
+           <div class="inline-block px-4 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-6 text-left">Global Engagement</div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-8 text-left">Bridging Theory & Field Application</h2>
+          <div class="space-y-6 text-slate-400 text-lg leading-relaxed">
+            <p>
+              Active engagement in the scientific community is central to my work. I attended the African School of Fundamental Physics and Applications (ASP) in Data Science in Rwanda, and subsequently participated in the ICLR conference held internationally in Rwanda. These experiences ensure that my methods are both rigorous and state-of-the-art.
+            </p>
+            <p>
+              My commitment to global dialogue led me to the Vatican African Conference on Climate Resilience in Nairobi, where I presented my research and actively participated in the transition towards sustainable ecological solutions. I believe that effective communication and robust engineering are the keys to meaningful change. 
+            </p>
+          </div>
+        </div>
+        <div class="lg:col-span-7 relative group lg:order-1 fade-in" style="animation-delay: 0.2s">
+          <div class="absolute -inset-2 bg-gradient-to-r from-emerald-500 to-sky-500 rounded-[2rem] opacity-20 blur-xl group-hover:opacity-40 transition-opacity"></div>
+          <div class="relative rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl h-[400px]">
+             <img src="assets/images/profile.JPG" alt="Professional Presentation" class="w-full h-full object-cover">
+             <div class="absolute inset-x-0 bottom-0 p-8 glass bg-black/40 border-t border-white/10 text-left">
+                <p class="text-white font-medium italic text-left">"Scalability, precision, and impact are the three pillars of my solution-oriented approach."</p>
+                <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-2 text-left">Source: CIFOR-ICRAF</p>
+             </div>
+          </div>
+        </div>
+      </section>
+
     </div>
+
+    <!-- CALL TO ACTION -->
+    <section class="mt-40 glass p-12 md:p-20 rounded-[3rem] border border-white/5 text-center relative overflow-hidden">
+        <div class="absolute -top-24 -right-24 w-64 h-64 bg-sky-500/10 rounded-full blur-3xl"></div>
+        
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-8 relative z-10">Let's build the <span class="text-sky-400">Future</span> of Conservation.</h2>
+        <p class="text-slate-400 text-xl max-w-2xl mx-auto mb-12 relative z-10">
+          I am always looking for new challenges where I can apply my expertise in ML and IoT to solve environmental problems.
+        </p>
+        <div class="flex justify-center gap-6 relative z-10">
+           <a href="contact.html" class="px-10 py-5 bg-sky-500 text-white font-bold rounded-2xl hover:bg-sky-400 transition-all shadow-xl shadow-sky-500/20">Collaborate with me</a>
+           <a href="projects.html" class="px-10 py-5 border border-white/10 font-bold rounded-2xl hover:bg-white/5 transition-all">View Projects</a>
+        </div>
+    </section>
   </main>
 
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-left">© 2026 Milanto Rasolofohery</div>
-      <div class="footer-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
+  <!-- FOOTER -->
+  <footer class="border-t border-white border-opacity-5 py-20 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div class="col-span-1 md:col-span-2">
+        <div class="flex items-center gap-2 mb-6">
+          <div class="w-8 h-8 rounded-lg bg-sky-500 flex items-center justify-center text-white font-bold">M</div>
+          <span class="text-xl font-bold">Milanto.</span>
+        </div>
+        <p class="text-slate-400 max-w-sm mb-8">
+          Elevating conservation through technology. Specialized in Data Science, Machine Learning, and IoT for the environmental sector.
+        </p>
+        <div class="flex gap-4">
+          <a href="https://github.com/milanto-hery" target="_blank" class="w-12 h-12 rounded-xl border border-white border-opacity-10 flex items-center justify-center hover:bg-white hover:bg-opacity-5 transition-all grayscale hover:grayscale-0">
+            <img src="assets/images/github.png" alt="GitHub" class="w-6 h-6 invert">
+          </a>
+          <a href="https://linkedin.com/in/milanto-hery" target="_blank" class="w-12 h-12 rounded-xl border border-white border-opacity-10 flex items-center justify-center hover:bg-white hover:bg-opacity-5 transition-all">
+            <img src="assets/images/linkdn.png" alt="LinkedIn" class="w-6 h-6">
+          </a>
+        </div>
       </div>
-      <div class="footer-icons">
-        <a href="https://github.com/milanto-hery" target="_blank">
-          <img src="assets/images/github.png" alt="GitHub Profile">
-        </a>
-        <a href="https://linkedin.com/in/milanto-hery" target="_blank">
-          <img src="assets/images/linkdn.png" alt="LinkedIn Profile">
-        </a>
+      
+      <div>
+        <h4 class="font-bold mb-6 uppercase tracking-widest text-xs text-slate-500">Navigation</h4>
+        <ul class="space-y-4 text-slate-400">
+          <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
+          <li><a href="projects.html" class="hover:text-white transition-colors">Projects</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold mb-6 uppercase tracking-widest text-xs text-slate-500">Contact</h4>
+        <p class="text-slate-400 mb-4 text-left">Cape Town, South Africa</p>
+        <a href="mailto:milanto@aims.ac.za" class="text-sky-400 hover:underline">milanto@aims.ac.za</a>
       </div>
     </div>
   </footer>
